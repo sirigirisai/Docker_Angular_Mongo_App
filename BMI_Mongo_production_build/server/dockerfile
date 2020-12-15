@@ -1,0 +1,9 @@
+FROM node:10
+RUN mkdir -p /bmimongo
+WORKDIR /bmimongo
+COPY package.json /bmimongo
+RUN npm install
+COPY . /bmimongo
+EXPOSE 3000
+RUN  node mongoconnect.js
+
